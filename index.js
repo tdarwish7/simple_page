@@ -3,7 +3,7 @@ var server = express();
 
 
 server.get('/', function(request, response){
-  response.send('Hola!');
+  response.sendFile('public/html/index.html', {root: __dirname});
 });
 
 server.listen(8080);
