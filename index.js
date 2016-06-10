@@ -7,7 +7,7 @@ server.get('/', function(request, response){
 });
 
 server.get('/about', function(request, response){
-  response.sendFile('')
-}
+  response.sendFile('public/html/about.html', {root: __dirname});
+});
 
 server.listen(8080);
