@@ -1,5 +1,9 @@
 var express = require('express');
 var server = express();
+var bodyParser = require('body-parser');
+
+server.use(bodyParser.json());
+server.use(bodyParser.urlencoded({extended: true}));
 
 
 server.get('/', function(request, response){
@@ -16,7 +20,7 @@ server.get('/contact', function(request, response){
 
 
 server.post('/contact', function(request, response){
-  response.send("hello");
+  response.json(request.body);
 });
 
 server.listen(8080);
