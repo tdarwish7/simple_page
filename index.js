@@ -2,6 +2,7 @@ var express = require('express');
 var server = express();
 var bodyParser = require('body-parser');
 
+server.use(express.static(__dirname+'/public'));
 server.use(bodyParser.json());
 server.use(bodyParser.urlencoded({extended: true}));
 
